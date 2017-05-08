@@ -27,7 +27,7 @@ RSpec.describe Partiarelic::Middleware do
       const_set(:ACCEPT_METHODS, %w[GET HEAD].freeze)
     end
   end
-  let(:app) { Partiarelic::Middleware.new(nextapp, '/_newrelic/manual_start', opt: :option) }
+  let(:app) { Partiarelic::Middleware.new(nextapp, path: '/_newrelic/manual_start') }
 
   before do
     Partiarelic.send(:remove_const, :App)
@@ -44,7 +44,7 @@ RSpec.describe Partiarelic::Middleware do
       app
 
       expect(mockapp.instances.size).to eq(1)
-      expect(mockapp.instances.first.options).to eq({opt: :option})
+      expect(mockapp.instances.first.options).to eq({path: '/_newrelic/manual_start'})
     end
 
     it 'pass-through requests to nextapp' do
