@@ -3,8 +3,8 @@ require 'partiarelic/app'
 module Partiarelic
   class Middleware
     def initialize(app, path, options={})
-      @path = path
       @app = app
+      @path = path
       @partiarelic_app = App.new(**options)
     end
 
