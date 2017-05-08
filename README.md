@@ -1,5 +1,7 @@
 # Partiarelic
 
+[![Build Status](https://travis-ci.org/wata-gh/partiarelic.svg)](https://travis-ci.org/wata-gh/partiarelic)
+
 Adds endpoint to enable New Relic manually.
 
 ## Installation
