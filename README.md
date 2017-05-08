@@ -38,7 +38,7 @@ then your Rails application will handle `/_newrelic/manual_start`.
 gem 'partiarelic'
 
 # config.ru (middleware)
-use Partiarelic::Middleware, '/_newrelic/manual_start'
+use Partiarelic::Middleware, path: '/_newrelic/manual_start'
 
 # config.ru (mount)
 map '/_newrelic/manual_start' do
