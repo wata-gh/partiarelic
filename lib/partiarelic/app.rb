@@ -1,4 +1,5 @@
 require 'pathname'
+require 'newrelic_rpm'
 
 module Partiarelic
   class App
