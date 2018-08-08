@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package partiarelic.v1;
+
+service App {
+  rpc ManualStart (ManualStartRequest) returns (ManualStartResponse) {}
+}
+
+message ManualStartRequest {}
+
+message ManualStartResponse {}

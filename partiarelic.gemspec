@@ -27,6 +27,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rack-test', '~> 0.6.3'
   spec.add_development_dependency 'pry-byebug', '~> 3.4'
+  spec.add_development_dependency 'grpc-tools'
+  spec.add_development_dependency 'grpc'
 
   spec.add_dependency 'rack'
 end
