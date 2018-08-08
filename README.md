@@ -46,6 +46,24 @@ map '/_newrelic/manual_start' do
 end
 ```
 
+### gRPC application
+
+```ruby
+# Gemfile
+gem 'partiarelic', require 'partiarelic/grpc'
+
+# server
+s = GRPC::RpcServer.new
+s.add_http2_port(host, :this_port_is_insecure)
+s.handle(Partiarelic::GrpcApp)
+s.run_till_terminated
+
+# client
+require 'partiarelic/grpc/partiarelic_services_pb.rb'
+stub = Partiarelic::V1::App::Stub.new(host, :this_channel_is_insecure)
+stub.manual_start(Partiarelic::V1::ManualStartRequest.new)
+```
+
 ## Development
 
 ### Test
