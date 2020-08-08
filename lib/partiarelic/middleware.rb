@@ -5,7 +5,7 @@ module Partiarelic
     def initialize(app, options={})
       @app = app
       @options = options
-      @partiarelic_app = App.new(options)
+      @partiarelic_app = App.new(**options)
     end
 
     ACCEPT_METHODS = %w[GET HEAD].freeze
